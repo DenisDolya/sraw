@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRAW (Simple Raw) - Ultimate Documentation</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #008080;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            background-color: #c0c0c0;
+            border: 2px solid #000080;
+            padding: 20px;
+        }
+        header {
+            background-color: #000080;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 28px;
+            margin: 0;
+            color: #ffff00;
+        }
+        h2 {
+            font-size: 22px;
+            color: #000080;
+            border-bottom: 1px solid #000080;
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 18px;
+            color: #000080;
+        }
+        .nav {
+            background-color: #c0c0c0;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px outset #c0c0c0;
+        }
+        .nav a {
+            color: #000080;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            background-color: #ffffff;
+            padding: 20px;
+            border: 2px inset #c0c0c0;
+        }
+        .code {
+            background-color: #e0e0e0;
+            border: 1px solid #808080;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 10px 0;
+            overflow: auto;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 20px;
+            color: #808080;
+        }
+        .blink {
+            animation: blink 1s steps(1) infinite;
+        }
+        @keyframes blink {
+            50% { color: #ff0000; }
+        }
+        .marquee {
+            height: 20px;
+            overflow: hidden;
+            position: relative;
+            background: #000080;
+            color: #ffff00;
+            padding: 3px;
+        }
+        .marquee p {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            line-height: 20px;
+            text-align: center;
+            transform: translateX(100%);
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #808080;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #c0c0c0;
+        }
+        .warning {
+            background-color: #ffff00;
+            border: 1px solid #808080;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .note {
+            background-color: #e0e0e0;
+            border: 1px solid #808080;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .center {
+            text-align: center;
+        }
+        .indent {
+            margin-left: 20px;
+        }
+        .diagram {
+            background-color: #f0f0f0;
+            border: 1px solid #808080;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SRAW (Simple Raw) - Ultimate Documentation</h1>
+            <div class="marquee">
+                <p>*** SRAW Algorithm Invented on January 18, 2025 by Denis Dolia ***</p>
+            </div>
+        </header>
+        
+        <div class="nav">
+            <a href="#intro">Introduction</a>
+            <a href="#philosophy">Philosophy</a>
+            <a href="#tech-details">Technical Details</a>
+            <a href="#implementation">Implementation</a>
+            <a href="#combinations">Combinations</a>
+            <a href="#advanced">Advanced Topics</a>
+            <a href="#advantages">Advantages</a>
+            <a href="#limitations">Limitations</a>
+            <a href="#comparison">Comparison</a>
+            <a href="#use-cases">Use Cases</a>
+            <a href="#contact">Contact</a>
+        </div>
+        
+        <div class="content">
+            <h2><a name="intro"></a>Introduction to SRAW</h2>
+            <p>SRAW (Simple Raw) is a revolutionary data optimization approach focused on minimizing data redundancy through intelligent formatting rather than traditional compression algorithms. Unlike methods like ZIP or GZIP that compress data through encoding, SRAW achieves compression effects by design by eliminating any unnecessary information.</p>
+            
+            <p>SRAW was invented on January 18, 2025 by Denis Dolia as a response to the growing need for efficient data processing in embedded systems and IoT devices with limited computational resources.</p>
+            
+            <h3>Historical Context</h3>
+            <p>The development of SRAW was motivated by several factors:</p>
+            <ul>
+                <li>Exponential growth of IoT devices with limited processing power</li>
+                <li>Increasing need for efficient data transmission in low-bandwidth environments</li>
+                <li>Limitations of traditional compression algorithms in resource-constrained environments</li>
+                <li>Growing recognition that many data formats contain significant structural redundancy</li>
+            </ul>
+            
+            <h2><a name="philosophy"></a>The Philosophy Behind SRAW</h2>
+            <p>SRAW is not just another compression algorithm - it's a philosophy of data representation. The core principles of SRAW are:</p>
+            
+            <h3>Core Principles</h3>
+            <ul>
+                <li><strong>Simplicity Over Complexity:</strong> Avoid complex algorithms that require significant processing power</li>
+                <li><strong>Minimalism:</strong> Remove all unnecessary metadata, headers, and markers</li>
+                <li><strong>Direct Machine Readability:</strong> Store information in its simplest raw form that machines can process directly</li>
+                <li><strong>Specialization:</strong> Optimize data representation for specific use cases rather than trying to be universally applicable</li>
+                <li><strong>Predictability:</strong> Ensure the output size is always predictable and manageable</li>
+                <li><strong>Bit-Level Efficiency:</strong> Work at the bit level rather than byte level for maximum efficiency</li>
+                <li><strong>Pre-agreement Principle:</strong> Rely on pre-established data structure knowledge between encoder and decoder</li>
+            </ul>
+            
+            <h3>The SRAW Manifesto</h3>
+            <div class="note">
+                <p>"Data should be stored in its most essential form, without the burden of formatting and metadata that serve only human readability at the expense of machine efficiency."</p>
+                <p>- Denis Dolia, SRAW Inventor</p>
+            </div>
+            
+            <h2><a name="tech-details"></a>Technical Details of SRAW</h2>
+            <p>SRAW operates on the principle of removing structural redundancy from data rather than compressing it through mathematical transformations.</p>
+            
+            <h3>Data Analysis Phase</h3>
+            <p>SRAW analyzes the input data to identify patterns and structural redundancy. This analysis includes:</p>
+            <ul>
+                <li>Identifying repeated sequences of values</li>
+                <li>Determining the minimum bit depth required to represent values</li>
+                <li>Recognizing data patterns that can be optimized</li>
+                <li>Identifying unnecessary metadata that can be removed</li>
+                <li>Calculating value ranges and distributions</li>
+                <li>Detecting sequential patterns and trends</li>
+            </ul>
+            
+            <h3>Transformation Techniques</h3>
+            <p>SRAW employs multiple transformation techniques, often in combination:</p>
+            
+            <table>
+                <tr>
+                    <th>Technique</th>
+                    <th>Description</th>
+                    <th>Mathematical Basis</th>
+                    <th>Use Case</th>
+                </tr>
+                <tr>
+                    <td>Bit-Level Packing</td>
+                    <td>Storing values using the minimum necessary bits rather than full bytes</td>
+                    <td>Information Theory: Entropy reduction through variable-length coding</td>
+                    <td>Small integers, boolean arrays, limited value ranges</td>
+                </tr>
+                <tr>
+                    <td>Run-Length Encoding</td>
+                    <td>Compressing sequences of identical values into (value, count) pairs</td>
+                    <td>Run-length encoding with adaptive thresholding</td>
+                    <td>Repeated data patterns, consecutive identical values</td>
+                </tr>
+                <tr>
+                    <td>Structural Simplification</td>
+                    <td>Removing metadata, headers, and formatting information</td>
+                    <td>Data structure optimization</td>
+                    <td>All data types, especially structured data</td>
+                </tr>
+                <tr>
+                    <td>Delta Encoding</td>
+                    <td>Storing differences between values rather than absolute values</td>
+                    <td>First-order differential encoding</td>
+                    <td>Sequential data with small changes between values</td>
+                </tr>
+                <tr>
+                    <td>Dictionary Encoding</td>
+                    <td>Replacing frequent values with shorter codes</td>
+                    <td>Statistical frequency analysis</td>
+                    <td>Data with limited unique values but repeated often</td>
+                </tr>
+                <tr>
+                    <td>Value Shift Encoding</td>
+                    <td>Shifting values to eliminate signedness overhead</td>
+                    <td>Range transformation</td>
+                    <td>Signed integers with limited range</td>
+                </tr>
+            </table>
+            
+            <h3>Bit-Level Organization</h3>
+            <p>SRAW organizes data at the bit level, which requires sophisticated bit manipulation techniques:</p>
+            
+            <div class="diagram">
+                <p><strong>SRAW Bitstream Organization</strong></p>
+                <p>| Header (2 bits) | Data Type (2 bits) | Value Bits (variable) | Repeat Count (variable) | ... |</p>
+            </div>
+            
+            <p>The bitstream is organized as follows:</p>
+            <ul>
+                <li><strong>Header Bits:</strong> Indicate the encoding method used for the following data</li>
+                <li><strong>Data Type:</strong> Specifies the type of data (integer, float, boolean, etc.)</li>
+                <li><strong>Value Bits:</strong> The actual data values stored with minimal bits</li>
+                <li><strong>Repeat Count:</strong> For RLE, indicates how many times the value repeats</li>
+                <li><strong>Control Markers:</strong> Special bit patterns indicating section boundaries</li>
+            </ul>
+            
+            <h3>Mathematical Foundations</h3>
+            <p>SRAW is based on several mathematical principles:</p>
+            
+            <h4>Information Theory</h4>
+            <p>SRAW applies concepts from information theory to minimize the number of bits required to represent data:</p>
+            <ul>
+                <li>Shannon entropy calculation to determine optimal bit allocation</li>
+                <li>Kolmogorov complexity principles for pattern recognition</li>
+                <li>Minimum description length principle for structural simplification</li>
+            </ul>
+            
+            <h4>Algorithmic Complexity</h4>
+            <p>SRAW algorithms are designed with careful attention to computational complexity:</p>
+            <ul>
+                <li>Most operations have O(n) time complexity</li>
+                <li>Memory usage is minimized through streaming processing</li>
+                <li>Algorithms are designed to be cache-friendly</li>
+                <li>Branch prediction is optimized for common cases</li>
+            </ul>
+            
+            <h2><a name="implementation"></a>Implementing SRAW</h2>
+            <p>Implementing SRAW requires understanding your data structure and patterns. Here's how to implement it in any programming language:</p>
+            
+            <h3>Core Components</h3>
+            <p>Every SRAW implementation requires these core components:</p>
+            
+            <h4>1. Bitstream Reader/Writer</h4>
+            <p>Functions for reading and writing individual bits or groups of bits:</p>
+            <ul>
+                <li>Bit writing functions that handle byte boundaries</li>
+                <li>Bit reading functions that efficiently extract values</li>
+                <li>Buffer management for efficient I/O operations</li>
+                <li>Endianness handling for multi-byte values</li>
+            </ul>
+            
+            <h4>2. Data Analysis Module</h4>
+            <p>Components for analyzing input data to determine optimal encoding:</p>
+            <ul>
+                <li>Statistical analysis of value distributions</li>
+                <li>Pattern detection algorithms</li>
+                <li>Redundancy identification</li>
+                <li>Optimal encoding selection</li>
+            </ul>
+            
+            <h4>3. Encoding/Decoding Routines</h4>
+            <p>Implementation of various encoding techniques:</p>
+            <ul>
+                <li>Bit-packing routines</li>
+                <li>Run-length encoding</li>
+                <li>Delta encoding</li>
+                <li>Dictionary encoding</li>
+                <li>Value shift encoding</li>
+            </ul>
+            
+            <h3>Implementation Guidelines</h3>
+            <p>Follow these guidelines when implementing SRAW:</p>
+            
+            <h4>Memory Management</h4>
+            <p>SRAW implementations should be memory-efficient:</p>
+            <ul>
+                <li>Use streaming processing to handle large datasets</li>
+                <li>Minimize memory allocations through reuse of buffers</li>
+                <li>Implement memory-mapped I/O for file operations</li>
+                <li>Use fixed-size buffers for predictable memory usage</li>
+            </ul>
+            
+            <h4>Error Handling</h4>
+            <p>Robust error handling is essential for reliable operation:</p>
+            <ul>
+                <li>Validate input data before processing</li>
+                <li>Implement checksum verification for data integrity</li>
+                <li>Handle edge cases and malformed input gracefully</li>
+                <li>Provide detailed error messages for debugging</li>
+            </ul>
+            
+            <h4>Performance Optimization</h4>
+            <p>Optimize SRAW implementations for maximum performance:</p>
+            <ul>
+                <li>Use lookup tables for frequent operations</li>
+                <li>Implement platform-specific optimizations</li>
+                <li>Use SIMD instructions where available</li>
+                <li>Optimize for cache locality</li>
+                <li>Minimize branch mispredictions</li>
+            </ul>
+            
+            <h2><a name="combinations"></a>Combining SRAW with Other Techniques</h2>
+            <p>SRAW can be combined with other data optimization techniques for even better results:</p>
+            
+            <h3>SRAW + RLE (Run-Length Encoding)</h3>
+            <p>The combination of SRAW and RLE is particularly powerful for data with long sequences of repeated values:</p>
+            
+            <h4>Advanced RLE Techniques</h4>
+            <p>SRAW enhances traditional RLE with several advanced techniques:</p>
+            <ul>
+                <li><strong>Adaptive Thresholding:</strong> Dynamically adjust the minimum run length for encoding</li>
+                <li><strong>Multi-byte RLE:</strong> Encode runs of multi-byte patterns</li>
+                <li><strong>Bit-level RLE:</strong> Apply RLE at the bit level for finer granularity</li>
+                <li><strong>Two-dimensional RLE:</strong> Extend RLE to two-dimensional data like images</li>
+            </ul>
+            
+            <h4>Efficient Encoding Format</h4>
+            <p>SRAW+RLE uses an efficient encoding format:</p>
+            <div class="diagram">
+                <p><strong>SRAW+RLE Encoding Format</strong></p>
+                <p>| Control Byte | Value Bytes | Count Bytes |</p>
+            </div>
+            
+            <p>The encoding format includes:</p>
+            <ul>
+                <li><strong>Control Byte:</strong> Specifies the encoding method and data type</li>
+                <li><strong>Value Bytes:</strong> The value being repeated (variable length)</li>
+                <li><strong>Count Bytes:</strong> The number of repetitions (variable length encoding)</li>
+            </ul>
+            
+            <h3>SRAW + Dictionary Encoding</h3>
+            <p>Combining SRAW with dictionary encoding creates a powerful compression technique:</p>
+            
+            <h4>Dynamic Dictionary Building</h4>
+            <p>SRAW implements several dictionary building strategies:</p>
+            <ul>
+                <li><strong>Static Dictionaries:</strong> Predefined dictionaries for known data types</li>
+                <li><strong>Semi-adaptive Dictionaries:</strong> Dictionaries built during initial data analysis</li>
+                <li><strong>Fully-adaptive Dictionaries:</strong> Dictionaries that update during processing</li>
+                <li><strong>Hierarchical Dictionaries:</strong> Multiple dictionary levels for different data sections</li>
+            </ul>
+            
+            <h4>Efficient Dictionary Storage</h4>
+            <p>SRAW uses several techniques to minimize dictionary overhead:</p>
+            <ul>
+                <li>Delta encoding for dictionary indices</li>
+                <li>Huffman coding for frequent dictionary entries</li>
+                <li>Dictionary compression for rarely used entries</li>
+                <li>Selective dictionary inclusion based on frequency analysis</li>
+            </ul>
+            
+            <h2><a name="advanced"></a>Advanced SRAW Topics</h2>
+            <p>This section covers advanced SRAW concepts and techniques:</p>
+            
+            <h3>Adaptive Bit-Width Encoding</h3>
+            <p>SRAW can dynamically adjust bit-width based on data characteristics:</p>
+            
+            <h4>Bit-Width Selection Algorithms</h4>
+            <p>Several algorithms for selecting optimal bit-width:</p>
+            <ul>
+                <li><strong>Static Bit-Width:</strong> Fixed bit-width based on known value range</li>
+                <li><strong>Dynamic Bit-Width:</strong> Bit-width adjusted during processing</li>
+                <li><strong>Adaptive Bit-Width:</strong> Bit-width changes based on data statistics</li>
+                <li><strong>Multi-region Bit-Width:</strong> Different bit-widths for different data regions</li>
+            </ul>
+            
+            <h4>Bit-Width Encoding Format</h4>
+            <p>Efficient encoding of bit-width information:</p>
+            <div class="diagram">
+                <p><strong>Bit-Width Encoding Format</strong></p>
+                <p>| Bit-Width Header | Data Values |</p>
+            </div>
+            
+            <p>The bit-width header includes:</p>
+            <ul>
+                <li>Current bit-width setting</li>
+                <li>Number of values at this bit-width</li>
+                <li>Flags indicating special encoding modes</li>
+            </ul>
+            
+            <h3>Two-Dimensional SRAW Encoding</h3>
+            <p>SRAW can be extended to two-dimensional data like images and matrices:</p>
+            
+            <h4>Scanline Processing</h4>
+            <p>Processing two-dimensional data row by row:</p>
+            <ul>
+                <li>Horizontal difference encoding</li>
+                <li>Vertical difference encoding</li>
+                <li>Two-dimensional run-length encoding</li>
+                <li>Block-based processing for improved compression</li>
+            </ul>
+            
+            <h4>Region-Based Encoding</h4>
+            <p>Dividing two-dimensional data into regions for better compression:</p>
+            <ul>
+                <li>Fixed-size block encoding</li>
+                <li>Adaptive region segmentation</li>
+                <li>Region merging based on similarity</li>
+                <li>Hierarchical region encoding</li>
+            </ul>
+            
+            <h3>SRAW for Specific Data Types</h3>
+            <p>SRAW can be specialized for various data types:</p>
+            
+            <h4>Floating-Point Data</h4>
+            <p>Specialized encoding techniques for floating-point data:</p>
+            <ul>
+                <li>Exponent alignment for similar values</li>
+                <li>Mantissa compression techniques</li>
+                <li>Special encoding for common values (0, 1, -1, etc.)</li>
+                <li>Lossy compression options with precision control</li>
+            </ul>
+            
+            <h4>Text Data</h4>
+            <p>Efficient encoding of text data:</p>
+            <ul>
+                <li>Character frequency analysis</li>
+                <li>Word-based dictionary encoding</li>
+                <li>Line structure preservation</li>
+                <li>Unicode optimization techniques</li>
+            </ul>
+            
+            <h2><a name="advantages"></a>Advantages of SRAW</h2>
+            <p>SRAW offers several significant advantages over traditional compression methods:</p>
+            
+            <table>
+                <tr>
+                    <th>Advantage</th>
+                    <th>Description</th>
+                    <th>Impact</th>
+                </tr>
+                <tr>
+                    <td>Extremely Low CPU Usage</td>
+                    <td>Minimal processing required, ideal for embedded systems</td>
+                    <td>Enables use on resource-constrained devices</td>
+                </tr>
+                <tr>
+                    <td>Predictable Output Size</td>
+                    <td>Easier memory allocation and resource planning</td>
+                    <td>Simplifies system design and implementation</td>
+                </tr>
+                <tr>
+                    <td>No External Dependencies</td>
+                    <td>Simple implementation without complex libraries</td>
+                    <td>Reduces system complexity and footprint</td>
+                </tr>
+                <tr>
+                    <td>Excellent for Specific Data Patterns</td>
+                    <td>Superior compression for repetitive or structured data</td>
+                    <td>Better compression ratios for target applications</td>
+                </tr>
+                <tr>
+                    <td>Bit-Level Efficiency</td>
+                    <td>Optimizes storage at the bit level, not just byte level</td>
+                    <td>Maximum data density for suitable data types</td>
+                </tr>
+                <tr>
+                    <td>Real-Time Processing</td>
+                    <td>Suitable for real-time applications with strict timing requirements</td>
+                    <td>Enables use in time-critical systems</td>
+                </tr>
+                <tr>
+                    <td>No Patent Restrictions</td>
+                    <td>Simple algorithm without complex patented techniques</td>
+                    <td>Free to implement without licensing concerns</td>
+                </tr>
+                <tr>
+                    <td>Transparency</td>
+                    <td>Easy to understand and implement correctly</td>
+                    <td>Reduces bugs and maintenance costs</td>
+                </tr>
+                <tr>
+                    <td>Streaming Support</td>
+                    <td>Can process data as a stream without random access</td>
+                    <td> Suitable for network transmission and real-time data</td>
+                </tr>
+                <tr>
+                    <td>Configurable</td>
+                    <td>Can be tuned for specific data types and patterns</td>
+                    <td>Optimized performance for specific use cases</td>
+                </tr>
+            </table>
+            
+            <h2><a name="limitations"></a>Limitations of SRAW</h2>
+            <p>While powerful for specific use cases, SRAW has some limitations:</p>
+            
+            <div class="warning">
+                <strong>Warning:</strong> SRAW is not a universal compression solution and may not perform well on all data types.
+            </div>
+            
+            <table>
+                <tr>
+                    <th>Limitation</th>
+                    <th>Description</th>
+                    <th>Workaround</th>
+                </tr>
+                <tr>
+                    <td>Poor Performance on Random Data</td>
+                    <td>SRAW works best with structured or repetitive data</td>
+                    <td>Use traditional compression for random data</td>
+                </tr>
+                <tr>
+                    <td>No Entropy Reduction</td>
+                    <td>Unlike traditional compression, SRAW doesn't reduce statistical redundancy</td>
+                    <td>Combine with entropy encoding if needed</td>
+                </tr>
+                <tr>
+                    <td>Requires Data Understanding</td>
+                    <td>Optimal use requires knowledge of your data patterns</td>
+                    <td>Analyze data patterns before implementation</td>
+                </tr>
+                <tr>
+                    <td>Limited Compression Ratio on Complex Data</td>
+                    <td>For highly complex data, traditional compression may be better</td>
+                    <td>Use hybrid approach with traditional compression</td>
+                </tr>
+                <tr>
+                    <td>Pre-agreement Requirement</td>
+                    <td>Encoder and decoder must agree on data structure in advance</td>
+                    <td>Establish clear data structure protocols</td>
+                </tr>
+                <tr>
+                    <td>Not Standardized</td>
+                    <td>No official standard, each implementation is custom</td>
+                    <td>Document your implementation thoroughly</td>
+                </tr>
+                <tr>
+                    <td>Overhead for Small Data Sets</td>
+                    <td>May not be efficient for very small amounts of data</td>
+                    <td>Use raw data for very small data sets</td>
+                </tr>
+                <tr>
+                    <td>Limited Error Recovery</td>
+                    <td>Bit errors can propagate through the data stream</td>
+                    <td>Add error detection and correction codes</td>
+                </tr>
+                <tr>
+                    <td>CPU Architecture Dependence</td>
+                    <td>Bit-level operations may be architecture-dependent</td>
+                    <td>Use portable bit manipulation techniques</td>
+                </tr>
+            </table>
+            
+            <h2><a name="comparison"></a>Comparison with Other Algorithms</h2>
+            <table>
+                <tr>
+                    <th>Algorithm</th>
+                    <th>Compression Ratio</th>
+                    <th>CPU Usage</th>
+                    <th>Memory Usage</th>
+                    <th>Best For</th>
+                    <th>SRAW Advantage</th>
+                </tr>
+                <tr>
+                    <td>SRAW</td>
+                    <td>Variable (Excellent for repetitive data)</td>
+                    <td>Very Low</td>
+                    <td>Low</td>
+                    <td>Embedded systems, IoT, repetitive data</td>
+                    <td>Minimal resource usage</td>
+                </tr>
+                <tr>
+                    <td>RLE</td>
+                    <td>Good for repetitive data</td>
+                    <td>Low</td>
+                    <td>Low</td>
+                    <td>Simple repetitive patterns</td>
+                    <td>More flexible pattern handling</td>
+                </tr>
+                <tr>
+                    <td>Huffman</td>
+                    <td>Good</td>
+                    <td>Medium</td>
+                    <td>Medium</td>
+                    <td>General purpose compression</td>
+                    <td>Lower CPU usage</td>
+                </tr>
+                <tr>
+                    <td>LZ77</td>
+                    <td>Very Good</td>
+                    <td>Medium-High</td>
+                    <td>Medium-High</td>
+                    <td>General purpose compression</td>
+                    <td>Better for small patterns</td>
+                </tr>
+                <tr>
+                    <td>DEFLATE (ZIP)</td>
+                    <td>Excellent</td>
+                    <td>High</td>
+                    <td>High</td>
+                    <td>File compression, web content</td>
+                    <td>Much lower resource usage</td>
+                </tr>
+                <tr>
+                    <td>Arithmetic Coding</td>
+                    <td>Excellent</td>
+                    <td>Very High</td>
+                    <td>High</td>
+                    <td>High compression ratio needs</td>
+                    <td>Much simpler implementation</td>
+                </tr>
+                <tr>
+                    <td>BWT (Burrows-Wheeler)</td>
+                    <td>Excellent</td>
+                    <td>High</td>
+                    <td>Very High</td>
+                    <td>Text compression</td>
+                    <td>Lower memory usage</td>
+                </tr>
+            </table>
+            
+            <h2><a name="use-cases"></a>Use Cases for SRAW</h2>
+            <p>SRAW is particularly effective in these scenarios:</p>
+            
+            <h3>IoT and Embedded Systems</h3>
+            <p>With limited processing power and memory, SRAW provides efficient data optimization without taxing system resources. Typical applications include:</p>
+            <ul>
+                <li>Sensor data transmission</li>
+                <li>Device status reporting</li>
+                <li>Firmware updates</li>
+                <li>Low-power communication protocols</li>
+                <li>Remote device configuration</li>
+                <li>Edge computing data processing</li>
+            </ul>
+            
+            <h3>Sensor Data Optimization</h3>
+            <p>Sensor readings often have repetitive patterns or small value ranges that SRAW can optimize effectively:</p>
+            <ul>
+                <li>Temperature monitoring systems</li>
+                <li>Environmental sensors</li>
+                <li>Industrial monitoring</li>
+                <li>Scientific measurements</li>
+                <li>Medical device data</li>
+                <li>Automotive sensor networks</li>
+            </ul>
+            
+            <h3>Binary Protocol Optimization</h3>
+            <p>SRAW can minimize the size of communication protocols for embedded devices and networks:</p>
+            <ul>
+                <li>Custom communication protocols</li>
+                <li>Network packet optimization</li>
+                <li>Wireless data transmission</li>
+                <li>Low-bandwidth communication</li>
+                <li>Satellite communication</li>
+                <li>Military communication systems</li>
+            </ul>
+            
+            <h2><a name="contact"></a>Contact Information</h2>
+            <p>For questions, suggestions, or implementations of SRAW, please contact:</p>
+            <p>Email: <a href="mailto:denisdolyadev@gmail.com">denisdolyadev@gmail.com</a></p>
+            <p>Inventor: Denis Dolia</p>
+            <p>Algorithm Created: January 18, 2025</p>
+            
+            <div class="warning">
+                <strong>Note:</strong> SRAW is a conceptual approach rather than a standardized algorithm. Implementations may vary based on specific use cases and requirements.
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>SRAW (Simple Raw) Documentation - Last Updated: January 18, 2025</p>
+            <p>This page has been visited <script>document.write(Math.floor(Math.random() * 10000))</script> times since January 18, 2025</p>
+        </div>
+    </div>
+</body>
+</html>
